@@ -21,29 +21,43 @@ export default () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <h1>Sign Up</h1>
-      <div className="form-group">
+    <div  style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+      }}>
+    <form   style={{ backgroundColor: "blue", height: "300px", width: "500px" , marginTop:"60px" }} onSubmit={onSubmit}>
+      <h1 style={{ textAlign: "center" }}>Sign Up</h1>
+      <div className="form-group" style={{ textAlign: "center" }}>
         <label htmlFor="">Email Address</label>
+        <br />
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          type="text"
+          type="email"
           className="form-control"
+          placeholder="Enter Email"
         />
       </div>
-      <div className="form-group">
+      <br />
+      <div className="form-group" style={{ textAlign: "center" }}>
         <label htmlFor="">Password</label>
+        <br />
         <input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           type="password"
           className="form-control"
+          placeholder="Password"
         />
       </div>
+      <br />
       {errors}
-
+         <div style={{ textAlign: "center" }}>
       <button className="btn btn-primary">Sing Up</button>
+      </div>
+      <br />
     </form>
+      </div>
   );
 };
